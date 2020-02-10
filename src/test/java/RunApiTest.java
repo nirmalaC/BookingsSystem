@@ -11,5 +11,5 @@ import org.junit.runner.RunWith;
         tags = {"@ApiTests", "~@FeatureAutomationTest", "~@ManualTests"}
 )
 
-public class RuApiTest {
+public class RunApiTest {
 }
