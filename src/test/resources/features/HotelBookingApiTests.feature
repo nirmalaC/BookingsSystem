@@ -1,12 +1,10 @@
 @ApiTests
 Feature: User should be able to submit POST and DELETE requests to the web services
 
-  Scenario Outline: User should be able to save the hotel booking
+  Scenario: User should be able to save the hotel booking
     Given I have POST service api endpoint
     When I post my booking details
     Then I should be able to create my bookings
-    Examples:
-      | firstname | surename | price  | deposit | checkindate | checkoutdate |
       | Laura     | Sim      | 594.38 | false   | sysdate+10  | sysdate+15   |
       | Jim       | clare    | 594.38 | false   | sysdate+10  | sysdate+15   |
 
