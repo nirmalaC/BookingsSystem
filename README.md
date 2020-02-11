@@ -66,11 +66,11 @@ Step-2: Use the following maven commands to run the tests.
 ```
 
 ```bash
-mvn test -Dcucumber.options="--tags @ui" to run the UI tests
+mvn test -Dcucumber.options="--tags @FeatureAutomationTest" to run the UI tests
 ```
 
 ```bash
-mvn test -Dcucumber.options="--tags @api" to run the api tests
+mvn test -Dcucumber.options="--tags @ApiTests" to run the api tests
 ```
 
 ### Cucumber Test Reports
