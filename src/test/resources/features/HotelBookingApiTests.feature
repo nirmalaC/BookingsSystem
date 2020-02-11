@@ -6,7 +6,6 @@ Feature: User should be able to submit POST and DELETE requests to the web servi
     When I post my booking details
     Then I should be able to create my bookings
       | Laura     | Sim      | 594.38 | false   | sysdate+10  | sysdate+15   |
-      | Jim       | clare    | 594.38 | false   | sysdate+10  | sysdate+15   |
 
   Scenario: User should be able to delete the saved bookings successfully
     Given I have DELETE service api endpoint
