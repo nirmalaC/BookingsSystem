@@ -3,8 +3,11 @@ package stepDefinitions;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import cucumber.api.java.en.Given;
+import helpers.UiHelper;
 import org.openqa.selenium.support.PageFactory;
 import pageobjects.BookingHomePage;
+
+import static helpers.UiHelper.*;
 
 public class StepDefinitions {
 
@@ -18,6 +21,7 @@ public class StepDefinitions {
     @When("^I click on the save button$")
     public void iClickOnTheSaveButton() throws Throwable {
         page.save_button.click();
+        waitForJQueryLoad();
     }
 
     @Then("^I should be able to save the booking : (.*), (.*), (.*), (.*), (.*), (.*)$")

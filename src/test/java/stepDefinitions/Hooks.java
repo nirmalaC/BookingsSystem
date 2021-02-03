@@ -93,7 +93,7 @@ public class Hooks {
     public static void initiateWebdriver() {
         log.info("Opening Browser...." + browser);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+//        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.get(configProperties.getProperty("url"));
     }
 

@@ -7,12 +7,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.Select;
-import helpers.UiHelper;
 import stepDefinitions.Hooks;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.logging.Logger;
+
+import static helpers.UiHelper.waitForVisibleElement;
 
 public class BookingHomePage extends Hooks {
 
@@ -53,6 +54,7 @@ public class BookingHomePage extends Hooks {
 
     @FindBy(how = How.CSS, using = "a[data-handler='next']")
     public static WebElement datepicker_next;
+
 
     public BookingHomePage() throws IOException {
         super();
@@ -124,8 +126,8 @@ public class BookingHomePage extends Hooks {
      */
     public void checkDetailsAreNotDisplayed(String firstname, String surename) {
         driver.navigate().refresh();
-        checkFirstNameIsNotDisplayed(firstname, 1);
-        checkFirstNameIsNotDisplayed(surename, 2);
+        checkTextIsNotDisplayed(firstname, 1);
+        checkTextIsNotDisplayed(surename, 2);
     }
 
     /**
@@ -133,7 +135,6 @@ public class BookingHomePage extends Hooks {
      */
     public void clickDeleteButton(String textValue) {
         WebElement element = driver.findElement(By.xpath("//div[@id='bookings']/div[@class='row']/div/p[text()='" + textValue + "']//ancestor::div[@class='row']/div[7]"));
-        UiHelper.waitForVisibleElement(element);
         element.click();
     }
 
@@ -189,7 +190,6 @@ public class BookingHomePage extends Hooks {
      */
     public void clicksavedDetailsAreDisplayed(String textValue, int divIndex) {
         WebElement element = driver.findElement(By.xpath("//p[text()='" + textValue + "']/ancestor::div[@class='row']"));
-        UiHelper.waitForVisibleElement(element);
         Assert.assertTrue(element.isDisplayed());
         List<WebElement> elements = driver.findElements(By.xpath("//div[@id='bookings']/div[@class='row']/div[" + divIndex + "]/p"));
         for (WebElement eachElement : elements) {
@@ -223,9 +223,9 @@ public class BookingHomePage extends Hooks {
      * @param textValue this is the text used to get the delete button for each row
      * @param divIndex  this is the index of div to get the column
      */
-    public void checkFirstNameIsNotDisplayed(String textValue, int divIndex) {
+    public void checkTextIsNotDisplayed(String textValue, int divIndex) {
         WebElement element = driver.findElement(By.cssSelector("div[class='jumbotron'] h1"));
-        UiHelper.waitForVisibleElement(element);
+        waitForVisibleElement(element);
         List<WebElement> elements = retryingListElement(divIndex);
         for (WebElement elementText : elements) {
             String textDisplayed = elementText.getText();
