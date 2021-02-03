@@ -46,7 +46,7 @@ public class ApiStepDefinitions {
         for (Map<String, String> data : table.asMaps(String.class, String.class)) {
             Log.info("Entered into loop");
             assertThat("Check the value for Firstname  :: ", response.extract().response().jsonPath().getString("firstname"), is(equalTo(data.get("firstname"))));
-            assertThat("Check the value for Lastname  :: ", response.extract().response().jsonPath().getString("lastname"), is(equalTo(data.get("surename"))));
+            assertThat("Check the value for Lastname  :: ", response.extract().response().jsonPath().getString("lastname"), is(equalTo(data.get("lastname"))));
             assertThat("Check the value for Price  :: ", response.extract().response().jsonPath().getString("totalprice"), is(equalTo(data.get("price"))));
             assertThat("Check the value for Deposit  :: ", response.extract().response().jsonPath().getString("depositpaid"), is(equalTo((data.get("deposit")))));
             assertThat("Check the value for CheckinDate  :: ", response.extract().response().jsonPath().getString("bookingdates.checkin"), is(equalTo(resolveDateformat(data.get("checkindate")))));

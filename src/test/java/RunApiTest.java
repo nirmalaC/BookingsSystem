@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
         glue={"stepDefinitions"},
         monochrome = true,
         plugin = { "pretty", "html:target/api-cucumber-reports" },
-        tags = {"@ApiTests", "~@FeatureAutomationTest", "~@ManualTests"}
+        tags = {"@ApiTests"}
 )
 
 public class RunApiTest {
