@@ -62,15 +62,26 @@ Step-1: Clone the repository from https://github.com/nirmalaC/HotelBookingSystem
 Step-2: Use the following maven commands to run the tests.
 
 ```bash
-"mvn test" executes both UI and API tests
+Both UI and API tests can be executed by running the TestRunner
+
+mvn clean -Dtest=RunTest test
 ```
 
 ```bash
-mvn test -Dcucumber.options="--tags @FeatureAutomationTest" to run the UI tests
+To run the tests using cucumber options 
+
+mvn test -Dcucumber.filter.tags="@ApiTests"
+
+mvn test -Dcucumber.filter.tags="@FeatureAutomationTest"
+
 ```
 
 ```bash
-mvn test -Dcucumber.options="--tags @ApiTests" to run the api tests
+To run the  test using cucumber options 
+
+mvn test -Dcucumber.options="--tags @ApiTests"
+
+mvn test -Dcucumber.options="--tags @FeatureAutomationTest"
 ```
 
 ### Cucumber Test Reports
