@@ -83,7 +83,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.2</version>
+                <version>3.6.1</version>
                 <configuration>
                     <source>8</source>
                     <target>8</target>
@@ -93,22 +93,21 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>2.19.1</version>
-                <configuration>
-                    <includes>
-                        <include>**/java/RunApiTest.java</include>
-                        <include>**/java/RunUITest.java</include>
-                    </includes>
-                </configuration>
                 <executions>
                     <execution>
-                        <id>test-reports</id>
+                        <configuration>
+                            <includes>
+                                <includesFile>**/java/RunTest.java</includesFile>
+                            </includes>
+                        </configuration>
                         <goals>
                             <goal>integration-test</goal>
                         </goals>
-                        <phase>integration-test</phase>
                     </execution>
                 </executions>
             </plugin>
         </plugins>
     </build>
 </project>
+
+
