@@ -140,7 +140,6 @@ public class BookingHomePage extends Hooks {
 
     /**
      * This is the helper method for dates
-     *
      * @param textValue Text value ued to verify if the text is displayed.
      * @param divIndex  This is the value used in the xpath for getting the webelements
      */
@@ -198,8 +197,7 @@ public class BookingHomePage extends Hooks {
     }
 
     /**
-     * This is the method to get the staleElement exception.
-     *
+     * This method is used to loop through the Webelements in each column
      * @param divIndex This is the value used in the xpath for getting the webelements
      * @return
      */

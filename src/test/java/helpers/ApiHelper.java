@@ -23,7 +23,6 @@ public class ApiHelper {
     public String fs = File.separator;
 
     /**
-     *
      * @param URL -- Parameter used to post the data.
      * @return -- Returns a validatableResponse which can be used by other metheds.
      * @throws IOException -- This exception happens when there is a failure during reading, writing and searching file or directory operations.
@@ -67,7 +66,6 @@ public class ApiHelper {
     }
 
     /**
-     *
      * @param URL -- Parameter used to post the data.
      * @param bookingId -- Parameter used to get a specific user details.
      * @return -- Rreturns a validatableResponse which can be used by other metheds.
@@ -86,7 +84,6 @@ public class ApiHelper {
         }
 
     /**
-     *
      * @param URL -- Parameter used to post the data.
      * @param bookingId -- Parameter used to get a specific user details.
      * @return -- eturns a validatableResponse which can be used by other metheds.
@@ -106,7 +103,6 @@ public class ApiHelper {
     }
 
     /**
-     *
      * @param dateMacro -- Parameter used to resolve the dates.
      * @return -- Returns a validatableResponse which can be used by other metheds.
      */
