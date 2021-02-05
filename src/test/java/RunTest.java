@@ -7,8 +7,8 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue={"stepDefinitions"},
         monochrome = true,
-        plugin = { "pretty", "html:target/ui-cucumber-reports" },
-        tags = {"@ApiTests , @FeatureAutomationTest"}
+        plugin = { "pretty", "html:target/cucumber-reports" }
 )
+
 public class RunTest {
 }

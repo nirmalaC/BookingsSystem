@@ -1,4 +1,4 @@
-@FeatureAutomationTest
+@ui
 Feature: Hotel booking reservation
   As a customer
   I want to use the book hotel reservation system

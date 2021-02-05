@@ -1,4 +1,4 @@
-@ApiTests
+@api
 Feature: User should be able to submit POST and DELETE requests to the web services
 
   Scenario: User should be able to save the hotel booking
