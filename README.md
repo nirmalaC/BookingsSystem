@@ -1,9 +1,9 @@
 ## Test Automation For Hotel Booking System
 
 ### Framework Design Approach
-Selenium-cucumber is a behavior driven development (BDD) approach to write automation test script to test Web.
+Selenium-cucumber is a behavior driven development (BDD) approach to write automation test scripts for web application testing.
 
-Page Factory is an inbuilt Page Object Model concept for Selenium WebDriver but it is very optimized.Here we follow the concept of separation of Page Object Repository and Test Methods.
+Page Factory is an inbuilt Page Object Model concept for Selenium WebDriver but it is very optimized. Here we follow the concept of separation of Page Object Repository and Test Methods.
 
 Additionally, with the help of PageFactory class, we use annotations @FindBy to find WebElement. We use initElements method to initialize web elements.
 
@@ -11,17 +11,20 @@ For UI Tests : Selenium-cucumber-Maven with PageFactory Design Pattern.
 
 For API Tests : RestAssured with Junit
 
-### Tools And Environment
+### Tools and Environment
 1. IntelliJ IDEA 2016
 2. Java-8
 3. Maven-3.5.3
 4. Enable cucumber-java plugin in IntelliJ
 5. Git
 6. Required driver versions (Chrome-v2.38 & Gecko-v0.20.1)
-7. Required browsers (Chrome-v66.0 & Firefox-v60.0)
+7. Required browsers (Chrome-v88.0 & Firefox-v60.0)
 8. Windows 64bit
 
-Configure JAVA_HOME and MAVEN_HOM in the Environmental Variables : Follow the setup instructions specified in here https://www.mkyong.com/maven/how-to-install-maven-in-windows/
+### Prerequisites
+Configure JAVA_HOME and MAVEN_HOM in the Environmental Variables.
+Follow the setup instructions specified in here
+https://www.mkyong.com/maven/how-to-install-maven-in-windows/
 
 ### Test Architecture
 
@@ -40,8 +43,6 @@ Configure JAVA_HOME and MAVEN_HOM in the Environmental Variables : Follow the se
       |  |  |ApiStepDefinitions
       |  |  |Hooks
       |  |  |StepDefinitions
-      |  |RunApiTest
-      |  |RunUITest
       |src/test/resources
       |  |Drivers
       |  |Features
@@ -62,17 +63,17 @@ Step-1: Clone the repository from https://github.com/nirmalaC/HotelBookingSystem
 Step-2: Use the following maven commands to run the tests.
 
 ```bash
-"mvn test" executes both UI and API tests
+Both UI and API tests can be executed using the following command
+
+mvn clean test
 ```
 
 ```bash
-mvn test -Dcucumber.options="--tags @FeatureAutomationTest" to run the UI tests
-```
+Use the following commands to run specific tests as shown below   
 
-```bash
-mvn test -Dcucumber.options="--tags @ApiTests" to run the api tests
-```
+mvn test -Dcucumber.options="--tags @api"
 
+mvn test -Dcucumber.options="--tags @ui"
 ### Cucumber Test Reports
 
 ##### UI Test Results

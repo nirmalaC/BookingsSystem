@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.Properties;
+import java.util.Random;
 
 public class Utils {
 
@@ -24,4 +25,8 @@ public class Utils {
         return property;
     }
 
+    public static char randomChar(){
+        Random rnd = new Random();
+        return (char) ('a' + rnd.nextInt(26));
+    }
 }

@@ -1,4 +1,4 @@
-@FeatureAutomationTest
+@ui
 Feature: Hotel booking reservation
   As a customer
   I want to use the book hotel reservation system
@@ -12,6 +12,7 @@ Feature: Hotel booking reservation
       | firstname | surename | price | deposit | checkin_date | checkout_date |
       | Jack      | Bob      | 380   | true    | 20           | 25            |
       | Jim       | Jole     | 650   | false   | 16           | 22            |
+
 
   Scenario Outline: User should be able to delete the saved bookings successfully.
     Given I enter vaild details : <firstname>, <surename>, <price>, <deposit>, <checkin_date>, <checkout_date>
