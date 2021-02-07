@@ -6,58 +6,59 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import stepDefinitions.Hooks;
-
 import java.io.IOException;
 import java.util.List;
 import java.util.logging.Logger;
 
-import static helpers.UiHelper.waitForVisibleElement;
+import static helpers.UiHelper.*;
 
 public class BookingHomePage extends Hooks {
 
     public static Logger log = Logger.getLogger(String.valueOf(BookingHomePage.class));
 
     @FindBy(how = How.ID, using = "firstname")
-    public static WebElement first_name;
+    public WebElement first_name;
 
     @FindBy(how = How.ID, using = "lastname")
-    public static WebElement sure_name;
+    public WebElement sure_name;
 
     @FindBy(how = How.ID, using = "totalprice")
-    public static WebElement price;
+    public WebElement price;
 
     @FindBy(how = How.ID, using = "depositpaid")
     public WebElement deposit;
 
     @FindBy(how = How.ID, using = "checkin")
-    public static WebElement check_in;
+    public WebElement check_in;
 
     @FindBy(how = How.ID, using = "checkout")
-    public static WebElement check_out;
+    public WebElement check_out;
 
     @FindBy(how = How.CSS, using = "input[onclick='createBooking()'] ")
-    public static WebElement save_button;
+    public WebElement save_button;
 
     @FindBy(how = How.CSS, using = "input[value='Delete']")
-    public static WebElement delete_button;
+    public WebElement delete_button;
 
     @FindBy(how = How.CSS, using = "table[class='ui-datepicker-calendar']")
-    public static WebElement datepicker_table;
+    public WebElement datepicker_table;
 
     @FindBy(how = How.CSS, using = "div[class='ui-datepicker-title']")
-    public static WebElement datepicker_title;
+    public WebElement datepicker_title;
 
     @FindBy(how = How.CSS, using = "a[data-handler='prev']")
-    public static WebElement datepicker_previous;
+    public WebElement datepicker_previous;
 
     @FindBy(how = How.CSS, using = "a[data-handler='next']")
-    public static WebElement datepicker_next;
+    public WebElement datepicker_next;
 
 
     public BookingHomePage() throws IOException {
         super();
+        PageFactory.initElements(driver, this);
     }
 
     /**
@@ -130,11 +131,18 @@ public class BookingHomePage extends Hooks {
         checkTextIsNotDisplayed(surename, 2);
     }
 
+    public void clickSaveButton() {
+        waitForClickableElement(save_button);
+        save_button.click();
+        waitForJQueryLoad();
+    }
+
     /**
      * @param textValue this is the text used to get the each value from each row
      */
     public void clickDeleteButton(String textValue) {
         WebElement element = driver.findElement(By.xpath("//div[@id='bookings']/div[@class='row']/div/p[text()='" + textValue + "']//ancestor::div[@class='row']/div[7]"));
+        waitForClickableElement(element);
         element.click();
     }
 
@@ -149,8 +157,8 @@ public class BookingHomePage extends Hooks {
             String formatDate = eachElement.getText();
             //split year, month and days from the date using StringBuffer.
             StringBuffer sBuffer = new StringBuffer(formatDate);
-            String year = sBuffer.substring(2, 4);
-            String mon = sBuffer.substring(5, 7);
+            sBuffer.substring(2, 4);
+            sBuffer.substring(5, 7);
             String dd = sBuffer.substring(8, 10);
             if (dd.equals(textValue)) {
                 log.info("Date is displayed");

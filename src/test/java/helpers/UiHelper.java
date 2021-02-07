@@ -20,6 +20,15 @@ public class UiHelper {
     }
 
     /**
+     * This method is to check the element is clickable
+     * @param element This is the Webelement that has to be visible on the web page.
+     */
+    public static void waitForClickableElement(WebElement element){
+        waitForVisibleElement(element);
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    /**
      * This JavascriptExecutor method is to handle the ajax call
      */
     public static void waitForJQueryLoad() {

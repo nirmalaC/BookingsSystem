@@ -6,13 +6,11 @@ import helpers.Utils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Paths;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
 public class Hooks {
@@ -33,7 +31,7 @@ public class Hooks {
     /**
      * This method will initialize the driver instance.
      */
-    @Before("~@ApiTests")
+    @Before("~@api")
     public void openBrowser() {
 
         log.info("Test Started");
@@ -54,7 +52,7 @@ public class Hooks {
     /**
      * This will quit the driver instance
      */
-    @After("~@ApiTests")
+    @After("~@api")
     public void quitDriver() {
         driver.quit();
         log.info("Test Finished");

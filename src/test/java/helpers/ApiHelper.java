@@ -95,8 +95,12 @@ public class ApiHelper {
                         .baseUri(URL + "/" + bookingId)
                         .header("Authorization", "Basic YWRtaW46cGFzc3dvcmQxMjM=")
                         .contentType(ContentType.JSON)
+                        .log()
+                        .all()
                         .delete()
                         .then()
+                        .log()
+                        .all()
                         .assertThat()
                         .statusCode(201);
         return validatableResponse;

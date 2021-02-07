@@ -74,8 +74,6 @@ Use the following commands to run specific tests as shown below
 mvn test -Dcucumber.options="--tags @api"
 
 mvn test -Dcucumber.options="--tags @ui"
-```
-
 ### Cucumber Test Reports
 
 ##### UI Test Results
