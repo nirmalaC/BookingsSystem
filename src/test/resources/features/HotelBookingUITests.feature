@@ -23,3 +23,4 @@ Feature: Hotel booking reservation
       | firstname | surename | price | deposit | checkin_date | checkout_date |
       | Jack      | Bob      | 380   | true    | 20           | 25            |
       | Jim       | Jole     | 650   | false   | 16           | 22            |
+
